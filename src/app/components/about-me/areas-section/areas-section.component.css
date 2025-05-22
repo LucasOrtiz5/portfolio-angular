@@ -1,0 +1,68 @@
+.areas-section {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.area-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 100px;
+}
+
+.area-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Fondo animado */
+.lottie-bg {
+  position: absolute;
+  inset: 0; /* equivale a top: 0; right: 0; bottom: 0; left: 0 */
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lottie-bg lottie-player {
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenido encima de la animación */
+.area-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.area-text h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.area-text p {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #000000;
+}

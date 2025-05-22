@@ -1,0 +1,17 @@
+<section class="skills-container">
+  <h2 class="skills-title">Mis Habilidades</h2>
+
+  <div class="hotair-balloon" *ngFor="let b of balloons" [style.top]="b.top" [style.left]="b.left"
+    [style.transform]="'translate(-50%, -50%) scale(' + b.scale + ')'">
+
+    <div class="balloon" [ngStyle]="{ backgroundColor: b.color, color: b.color }">
+      <img [src]="'assets/skills' + b.logo" class="balloon-logo" />
+    </div>
+
+    <div class="basket"></div>
+  </div>
+  <div class="cloud" *ngFor="let c of clouds" [style.top]="c.top" [style.left]="c.left"
+    [style.transform]="'scale(' + c.scale + ')'">
+    <img src="assets/skills/3d-cloud.png" alt="cloud" />
+  </div>
+</section>

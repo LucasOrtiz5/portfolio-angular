@@ -1,0 +1,186 @@
+
+.skills-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 6rem;
+
+  /* Esto anula el padding lateral del contenedor padre */
+  margin-left: calc(-1 * var(--global-padding, 2rem));
+  margin-right: calc(-1 * var(--global-padding, 2rem));
+
+  background-color: rgb(212, 236, 236);
+}
+
+
+.skills-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+}
+
+
+.ballon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.8); /* Ajusta el factor de escala (0.8 = 80%) */
+    transform-origin: top left; /* O el punto que mejor convenga */
+}
+
+
+.balloon{
+  width: 9.35rem;
+  height: 9.35rem;
+  background-color: #c2012f;
+  color: #c2012f;
+  border-radius: 50%;
+  border: 4px solid #D7E7EA;
+  position: relative;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%);
+  -webkit-animation: moving-balloon 3s ease infinite;
+  animation: moving-balloon 3s ease infinite;
+}
+
+.balloon-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+
+  z-index: 2;
+}
+
+.balloon::after {
+    width: 4.35rem;
+    height: 0;
+    border-top: 3.75rem solid currentColor;
+    border-left: 1.85rem solid transparent;
+    border-right: 1.85rem solid transparent;
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+
+    z-index: 1;
+}
+
+.balloon::before {
+    width: 70px;
+    height: 25px;
+    background-color: #6d051d;
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 9.35rem;
+    transform: translate(-50%);
+    z-index: 0;
+}
+
+.basket {
+  width: 2.65rem;
+  height: 1.75rem;
+  background: #D1C1A6;
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 16.85rem;
+  -webkit-animation: moving-basket 3s ease infinite;
+  animation: moving-basket 3s ease infinite;
+
+  &:before {
+    width: 3.15rem;
+    height: 0.65rem;
+    background: #B2A082;
+    border-radius: 3px;
+    content: "";
+    position: absolute;
+    top: -0.65rem;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &:after {
+    width: 1.55rem;
+    height: 2.15rem;
+    border-left: 2px solid #B2A082;
+    border-right: 2px solid #B2A082;
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translate(-50%) perspective(50px) rotateX(-40deg);
+  }
+}
+
+.hotair-balloon {
+  margin-top: 2rem;
+  position: absolute;
+  transform-origin: center;
+  z-index: 2;
+}
+
+@-webkit-keyframes moving-balloon {
+  0% {
+    transform: translate(-50%);
+  }
+
+  50% {
+    transform: translate(-50%, -10%);
+  }
+}
+
+@keyframes moving-balloon {
+  0% {
+    transform: translate(-50%);
+  }
+
+  50% {
+    transform: translate(-50%, -10%);
+  }
+}
+
+@-webkit-keyframes moving-basket {
+  0% {
+    transform: translate(-50%);
+  }
+
+  50% {
+    transform: translate(-50%, -40%);
+  }
+}
+
+@keyframes moving-basket {
+  0% {
+    transform: translate(-50%);
+  }
+
+  50% {
+    transform: translate(-50%, -40%);
+  }
+}
+
+.cloud {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.cloud img {
+  width: 500px; /* tamaño base */
+  height: auto;
+  object-fit: contain;
+}
