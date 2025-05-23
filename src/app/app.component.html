@@ -1,9 +1,14 @@
-<nav>
-  <ul>
-    <li><a routerLink="/">Inicio</a></li>
-    <li><a routerLink="/about-me">Sobre Mi</a></li>
-    <li><a routerLink="/contact">Resumen</a></li>
-  </ul>
-</nav>
+<header class="custom-header">
+  <div class="header-content">
+    <a routerLink="/" class="logo">
+      <img src="assets/logo-stencil-svgrepo-com.svg" alt="Logo" height="50" />
+    </a>
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/about-me" routerLinkActive="active-link">Sobre Mi</a>
+      <a routerLink="/contact" routerLinkActive="active-link">Resumen</a>
+    </nav>
+  </div>
+</header>
 
 <router-outlet></router-outlet>
